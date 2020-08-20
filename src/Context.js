@@ -7,6 +7,7 @@ function ContextProvider(props) {
   const [computerScore, setComputerScore] = useState(0);
   const [userChoice, setUserChoice] = useState("");
   const [computerChoice, setComputerChoice] = useState("");
+  const [firstClick, setFirstClick] = useState(false);
 
   function increaseUserScore() {
     setUserScore((prevScore) => prevScore + 1);
@@ -31,6 +32,8 @@ function ContextProvider(props) {
         userChoice,
         computerChoice,
         setUserAndComputerChoice,
+        firstClick,
+        setFirstClick,
       }}
     >
       {props.children}

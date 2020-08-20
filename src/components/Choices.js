@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../Context";
 
 function Choices(props) {
-  const { setUserAndComputerChoice } = useContext(Context);
+  const { setUserAndComputerChoice, setFirstClick } = useContext(Context);
 
   function getComputerChoice() {
     const choices = ["r", "p", "s"];
@@ -10,6 +10,7 @@ function Choices(props) {
     return choices[random];
   }
   function handleClick(e) {
+    setFirstClick(true);
     const userChoice = e.target.id;
     const computerChoice = getComputerChoice();
     console.log(userChoice + computerChoice);

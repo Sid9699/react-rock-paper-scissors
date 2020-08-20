@@ -98,6 +98,12 @@ header > h1 {
   height: 80px;
   width: 80px;
   margin-top: 25px;
+  display: none;
+}
+
+.display-choice:hover {
+  cursor: default;
+  background: none;
 }
 
 .action-message {

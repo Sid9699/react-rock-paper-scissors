@@ -2,9 +2,13 @@ import React, { useContext } from "react";
 import { Context } from "../Context";
 
 function Scoreboard(props) {
-  const { userScore, computerScore, userChoice, computerChoice } = useContext(
-    Context
-  );
+  const {
+    userScore,
+    computerScore,
+    userChoice,
+    computerChoice,
+    firstClick,
+  } = useContext(Context);
 
   const paperImg = require("../images/hand-paper.png");
   const rockImg = require("../images/hand-rock.png");
@@ -12,7 +16,10 @@ function Scoreboard(props) {
 
   return (
     <div className="score-div">
-      <div className="choice display-choice">
+      <div
+        style={{ display: firstClick && "block" }}
+        className="choice display-choice"
+      >
         <img
           id="r"
           src={
@@ -31,7 +38,10 @@ function Scoreboard(props) {
         <span className="user-score">{userScore}</span>:
         <span className="computer-score">{computerScore}</span>
       </div>
-      <div className="choice display-choice">
+      <div
+        style={{ display: firstClick && "block" }}
+        className="choice display-choice"
+      >
         <img
           id="r"
           src={
