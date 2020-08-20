@@ -5,7 +5,7 @@ function Choices(props) {
   const { setUserAndComputerChoice } = useContext(Context);
 
   function getComputerChoice() {
-    const choices = ["r", "p ", "s"];
+    const choices = ["r", "p", "s"];
     const random = Math.floor(Math.random() * 3);
     return choices[random];
   }
@@ -13,6 +13,7 @@ function Choices(props) {
     const userChoice = e.target.id;
     const computerChoice = getComputerChoice();
     console.log(userChoice + computerChoice);
+    console.log(`Made a choice: me:${userChoice}; opp:${computerChoice};`);
 
     switch (userChoice + computerChoice) {
       case "pr":
@@ -20,18 +21,21 @@ function Choices(props) {
       case "sp":
         props.updateResult(userChoice, computerChoice, "win");
         console.log("win");
+        console.log("Choices component win");
         break;
       case "rp":
       case "sr":
       case "ps":
         props.updateResult(userChoice, computerChoice, "lose");
         console.log("lose");
+        console.log("Choices component lose");
         break;
       case "rr":
       case "ss":
       case "pp":
         props.updateResult(userChoice, computerChoice, "draw");
         console.log("draw");
+        console.log("Choices component draw");
         break;
       default:
     }
